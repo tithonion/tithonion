@@ -1,0 +1,72 @@
+/* =============================================
+   Design Tokens (CSS Custom Properties)
+   ============================================= */
+:root {
+  /* Background */
+  --color-bg-base: #0f1117;
+  --color-bg-surface: #161924;
+  --color-bg-overlay: #1e2235;
+
+  /* Border */
+  --color-border: #282d42;
+
+  /* Text */
+  --color-text-primary: #e4e6f0;
+  --color-text-secondary: #8b90a8;
+  --color-text-muted: #50566e;
+
+  /* Accent / Brand */
+  --color-accent: #6c8ef7;
+  --color-accent-hover: #849af9;
+  --color-accent-subtle: rgba(108, 142, 247, 0.1);
+
+  /* Semantic */
+  --color-success: #4caf87;
+  --color-success-subtle: rgba(76, 175, 135, 0.12);
+  --color-warning: #f0a742;
+  --color-warning-subtle: rgba(240, 167, 66, 0.12);
+  --color-danger: #e05c6a;
+  --color-danger-subtle: rgba(224, 92, 106, 0.12);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+}
+
+/* =============================================
+   Reset & Base
+   ============================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Yu Gothic UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  -webkit-font-smoothing: antialiased;
+}

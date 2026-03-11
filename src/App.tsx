@@ -1,8 +1,11 @@
+import AppLayout from "./components/layout/AppLayout";
+import Dashboard from "./pages/Dashboard";
+
 function App() {
   return (
-    <main>
-      <h1>Hello Tauri</h1>
-    </main>
+    <AppLayout activeNav="dashboard">
+      <Dashboard />
+    </AppLayout>
   );
 }
 

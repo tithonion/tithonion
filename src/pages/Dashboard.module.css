@@ -1,0 +1,265 @@
+.dashboard {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.projectIcon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.path {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+  margin-top: 2px;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Section */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Instance Grid */
+.instanceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Content Grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* File List */
+.fileList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fileName {
+  font-size: 12px;
+  color: var(--color-text-primary);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.fileMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.fileDate {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* Task List */
+.taskNote {
+  margin-bottom: var(--space-3);
+}
+
+.taskNoteText {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+}
+
+.taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.taskButton {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-overlay);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.12s, border-color 0.12s;
+}
+
+.taskButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.taskButton:hover:not(:disabled) {
+  background-color: var(--color-border);
+  border-color: var(--color-text-muted);
+}
+
+.taskLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  font-family: inherit;
+}
+
+.taskDesc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+}
+
+
+/* File List */
+.fileList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fileName {
+  font-size: 12px;
+  color: var(--color-text-primary);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.fileMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.fileDate {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* Task List */
+.taskNote {
+  margin-bottom: var(--space-3);
+}
+
+.taskNoteText {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+}
+
+.taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.taskButton {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-overlay);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.12s, border-color 0.12s;
+}
+
+.taskButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.taskButton:hover:not(:disabled) {
+  background-color: var(--color-border);
+  border-color: var(--color-text-muted);
+}
+
+.taskLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  font-family: inherit;
+}
+
+.taskDesc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+}
