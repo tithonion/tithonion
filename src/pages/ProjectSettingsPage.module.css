@@ -1,0 +1,570 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* ─── ヘッダー ─── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  transition: background 0.15s;
+}
+
+.backButton:hover {
+  background: var(--color-bg-overlay);
+  color: var(--color-text-primary);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 7px 16px;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.saveButton:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.saveButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── ローディング・エラー ─── */
+.loadingState {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.errorMsg {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-danger-subtle);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+/* ─── セクション ─── */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sectionDesc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-top: -6px;
+}
+
+/* ─── フィールド ─── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.textInput {
+  padding: 8px 10px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.textInput:focus {
+  border-color: var(--color-accent);
+}
+
+.pathText {
+  font-family: "Consolas", "Cascadia Code", monospace;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* ─── チェックボックス ─── */
+.checkField {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.checkLabel {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* ─── キー・バリューエディタ ─── */
+.kvEditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.kvRow {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.kvKey {
+  flex: 0 0 160px;
+  padding: 7px 9px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 12px;
+  outline: none;
+}
+
+.kvKey:focus {
+  border-color: var(--color-accent);
+}
+
+.kvValue {
+  flex: 1;
+  padding: 7px 9px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 12px;
+  font-family: "Consolas", "Cascadia Code", monospace;
+  outline: none;
+}
+
+.kvValue:focus {
+  border-color: var(--color-accent);
+}
+
+.kvRemove {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.kvRemove:hover {
+  background: var(--color-danger-subtle);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.kvAdd {
+  align-self: flex-start;
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.kvAdd:hover {
+  background: var(--color-bg-overlay);
+  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+}
+
+/* ─── アニメーション ─── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spinIcon {
+  animation: spin 1s linear infinite;
+}
+
+/* ─── テーマ選択 ─── */
+.themeRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-overlay);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.themeBtnActive {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ─── スキーマエディタ ─── */
+.schemaEditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.schemaHeader {
+  display: grid;
+  grid-template-columns: 1fr 90px 44px 1fr;
+  gap: var(--space-2);
+  padding: 0 var(--space-2);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.schemaColName { }
+.schemaColType { }
+.schemaColReq { text-align: center; }
+.schemaColDesc { }
+
+.schemaRow {
+  display: grid;
+  grid-template-columns: 1fr 90px 44px 1fr 28px;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.schemaInput,
+.schemaDescInput {
+  padding: 6px 9px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.schemaInput:focus,
+.schemaDescInput:focus {
+  border-color: var(--color-accent);
+}
+
+.schemaSelect {
+  padding: 6px 9px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.schemaCheckbox {
+  justify-self: center;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+/* ─── テンプレートエディタ ─── */
+.templateLayout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-3);
+  min-height: 240px;
+}
+
+.templateList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  overflow-y: auto;
+}
+
+.templateItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 9px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-family: "Consolas", "Cascadia Code", monospace;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.templateItem:hover {
+  background: var(--color-bg-overlay);
+  color: var(--color-text-primary);
+}
+
+.templateItemActive {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.templateNewRow {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+}
+
+.templateNameInput {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 12px;
+  outline: none;
+}
+
+.templateNameInput:focus {
+  border-color: var(--color-accent);
+}
+
+.templateAddBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.templateAddBtn:hover:not(:disabled) {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.templateAddBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.templateEditor {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.templateEditorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-overlay);
+}
+
+.templateEditorName {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-family: "Consolas", "Cascadia Code", monospace;
+}
+
+.templateSaveBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.templateSaveBtn:hover {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.templateTextarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  padding: var(--space-3);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 12px;
+  font-family: "Consolas", "Cascadia Code", "Fira Code", monospace;
+  outline: none;
+  line-height: 1.6;
+  min-height: 200px;
+}
+
+.templateEmpty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* ─── プレースホルダーヒント ─── */
+.placeholderHint {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 2px;
+}
+
+.placeholderHint code {
+  background: var(--color-bg-overlay);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+  font-family: "Consolas", "Cascadia Code", monospace;
+  color: var(--color-accent);
+  font-size: 10.5px;
+}
+
+/* ─── テンプレート行 (name + delete) ─── */
+.templateItemRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.templateItemRow .templateItem {
+  flex: 1;
+  min-width: 0;
+}
+
+.templateDeleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.12s, color 0.12s;
+}
+
+.templateDeleteBtn:hover {
+  background: var(--color-danger-subtle);
+  color: var(--color-danger);
+}

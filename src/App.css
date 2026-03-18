@@ -1,32 +1,33 @@
 /* =============================================
    Design Tokens (CSS Custom Properties)
+   Light theme (default)
    ============================================= */
 :root {
   /* Background */
-  --color-bg-base: #0f1117;
-  --color-bg-surface: #161924;
-  --color-bg-overlay: #1e2235;
+  --color-bg-base: #f5f6fa;
+  --color-bg-surface: #ffffff;
+  --color-bg-overlay: #eef0f6;
 
   /* Border */
-  --color-border: #282d42;
+  --color-border: #dde0ea;
 
   /* Text */
-  --color-text-primary: #e4e6f0;
-  --color-text-secondary: #8b90a8;
-  --color-text-muted: #50566e;
+  --color-text-primary: #1a1d2e;
+  --color-text-secondary: #5a6073;
+  --color-text-muted: #9298af;
 
   /* Accent / Brand */
-  --color-accent: #6c8ef7;
-  --color-accent-hover: #849af9;
-  --color-accent-subtle: rgba(108, 142, 247, 0.1);
+  --color-accent: #4a6cf7;
+  --color-accent-hover: #3554e5;
+  --color-accent-subtle: rgba(74, 108, 247, 0.08);
 
   /* Semantic */
-  --color-success: #4caf87;
-  --color-success-subtle: rgba(76, 175, 135, 0.12);
-  --color-warning: #f0a742;
-  --color-warning-subtle: rgba(240, 167, 66, 0.12);
-  --color-danger: #e05c6a;
-  --color-danger-subtle: rgba(224, 92, 106, 0.12);
+  --color-success: #2a9e70;
+  --color-success-subtle: rgba(42, 158, 112, 0.10);
+  --color-warning: #d4860e;
+  --color-warning-subtle: rgba(212, 134, 14, 0.10);
+  --color-danger: #d63848;
+  --color-danger-subtle: rgba(214, 56, 72, 0.10);
 
   /* Radius */
   --radius-sm: 4px;
@@ -41,6 +42,29 @@
   --space-5: 20px;
   --space-6: 24px;
   --space-8: 32px;
+}
+
+/* =============================================
+   Dark theme override
+   ============================================= */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg-base: #0f1117;
+  --color-bg-surface: #161924;
+  --color-bg-overlay: #1e2235;
+  --color-border: #282d42;
+  --color-text-primary: #e4e6f0;
+  --color-text-secondary: #8b90a8;
+  --color-text-muted: #50566e;
+  --color-accent: #6c8ef7;
+  --color-accent-hover: #849af9;
+  --color-accent-subtle: rgba(108, 142, 247, 0.1);
+  --color-success: #4caf87;
+  --color-success-subtle: rgba(76, 175, 135, 0.12);
+  --color-warning: #f0a742;
+  --color-warning-subtle: rgba(240, 167, 66, 0.12);
+  --color-danger: #e05c6a;
+  --color-danger-subtle: rgba(224, 92, 106, 0.12);
 }
 
 /* =============================================

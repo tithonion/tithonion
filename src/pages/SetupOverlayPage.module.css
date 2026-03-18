@@ -1,0 +1,221 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+/* ─── ヘッダー ─── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  transition: background 0.15s;
+}
+
+.backButton:hover {
+  background: var(--color-bg-overlay);
+  color: var(--color-text-primary);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+.refreshButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: var(--color-bg-overlay);
+}
+
+.refreshButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── 全OK バナー ─── */
+.allOkBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-success-subtle);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-md);
+  color: var(--color-success);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ─── プロジェクト未選択・tools 未定義 バナー ─── */
+.noProjectBanner,
+.noToolsBanner {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-overlay);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.noProjectBanner code,
+.noToolsBanner code {
+  font-family: "Consolas", "Cascadia Code", monospace;
+  font-size: 11px;
+  color: var(--color-accent);
+  background: var(--color-accent-subtle);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* ─── ローディング状態 ─── */
+.loadingState {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+/* ─── ツール一覧 ─── */
+.toolList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toolItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.toolInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.toolHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.toolLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.requiredBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.versionReq {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 1px 5px;
+  background: var(--color-warning-subtle);
+  color: var(--color-warning);
+  border-radius: var(--radius-sm);
+  font-family: "Consolas", "Cascadia Code", monospace;
+}
+
+.versionText {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: "Consolas", "Cascadia Code", monospace;
+}
+
+.toolDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.installLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  background: var(--color-danger-subtle);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  align-self: center;
+  transition: background 0.15s;
+}
+
+.installLink:hover {
+  background: rgba(224, 92, 106, 0.2);
+}
+
+/* ─── ステータスアイコン ─── */
+.pendingDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-border);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spinIcon {
+  animation: spin 1s linear infinite;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
